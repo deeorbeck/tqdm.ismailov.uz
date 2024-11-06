@@ -39,7 +39,7 @@ function fetchResults(searchTerm, category, page) {
     const type = category === "taqdimotlar" ? "pptx" : "docx";
     
     // Construct the API URL
-    const apiUrl = `http://109.199.116.217:2121/search?text=${encodeURIComponent(searchTerm)}&type=${type}&page=${page}&randomize=False`;
+    const apiUrl = `https://api.tqdm.ismailov.uz/search?text=${encodeURIComponent(searchTerm)}&type=${type}&page=${page}&randomize=False`;
 
     // Fetch data from the API
     fetch(apiUrl)
