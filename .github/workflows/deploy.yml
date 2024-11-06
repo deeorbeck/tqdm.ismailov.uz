@@ -1,0 +1,26 @@
+name: Deploy on Start Up Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository code
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    # SSH into the server, navigate to /var/tg/taqdimot_robot, pull the latest changes, and run docker-compose
+    - name: SSH and Deploy
+      uses: appleboy/ssh-action@v0.1.8
+      with:
+        host: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd /var/www/tqdm.ismailov.uz
+          git pull

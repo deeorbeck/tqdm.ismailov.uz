@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taqdimotlar | Referatlar</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Taqdimotlar | Referatlar - Tekin taqdimot va referatlarni topish uchun qidiruv tizimi">
+    <meta name="keywords" content="taqdimotlar, referatlar, qidirish, tekin, presentations, documents, search, free">
+    <meta name="author" content="Diyorbek Ismoilov , UniquePros">
+    
+    <!-- Open Graph Meta Tags for social media sharing -->
+    <meta property="og:title" content="Taqdimotlar | Referatlar">
+    <meta property="og:description" content="Tekin taqdimot va referatlarni topish uchun qidiruv tizimi">
+    <meta property="og:image" content="images/avatar.jpg"> <!-- Replace with a link to an image -->
+    <meta property="og:url" content="https://tqdm.ismailov.uz"> <!-- Replace with your website URL -->
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Taqdimotlar | Referatlar">
+    <meta name="twitter:description" content="Tekin taqdimot va referatlarni topish uchun qidiruv tizimi">
+    <meta name="twitter:image" content="images/avatar.jpg"> <!-- Replace with a link to an image -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2CCV82TFD"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-M2CCV82TFD');
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Moon Icon for Dark Mode Toggle -->
+    <div id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <div class="container">
+        <h1>Taqdimotlar | Referatlar</h1>
+        <form id="searchForm">
+            <div class="form-group">
+                <select id="categorySelect" required>
+                    <option value="taqdimotlar" selected>Taqdimotlar</option> <!-- Set this option as selected -->
+                    <option value="referatlar">Referatlar</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Hujjat mavzusi..." required>
+                <button type="submit">Qidirish</button>
+            </div>
+        </form>
+
+        <!-- Pagination Buttons -->
+        <div class="pagination-buttons">
+            <button id="prevPageButton" class="hidden"><i class="fas fa-chevron-left"></i></button> <!-- Previous Page button -->
+            <button id="nextPageButton" class="hidden"><i class="fas fa-chevron-right"></i></button> <!-- Next Page button -->
+        </div>
+
+        <div id="result" class="result"></div> <!-- Results will be displayed here -->
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
