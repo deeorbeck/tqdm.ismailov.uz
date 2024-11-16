@@ -9,13 +9,16 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
 
     if (searchTerm && selectedCategory) {
         currentPage = 1;
+        // window.location.search = `?q=${encodeURIComponent(searchTerm)}&category=${selectedCategory}&page=${currentPage}`;
         fetchResults(searchTerm, selectedCategory, currentPage);
+        updateURL(searchTerm)
         document.getElementById('nextPageButton').classList.add('hidden');
         document.getElementById('prevPageButton').classList.add('hidden');
     } else {
         alert('Please select a category and enter a search term.');
     }
 });
+
 
 document.getElementById('nextPageButton').addEventListener('click', function() {
     const searchTerm = document.getElementById('searchInput').value.trim();
@@ -35,6 +38,14 @@ document.getElementById('prevPageButton').addEventListener('click', function() {
     }
 });
 
+function updateURL(searchTerm) {
+    const baseUrl = "https://tqdm.ismailov.uz"; // Your domain
+    const newUrl = `${baseUrl}/?category=${encodeURIComponent(selectedCategory)}&q=${encodeURIComponent(searchTerm)}&page=${currentPage}`;
+    
+    // Change the browser's URL without reloading the page
+    history.pushState({ path: newUrl }, '', newUrl);
+}
+
 function fetchResults(searchTerm, category, page) {
     const type = category === "taqdimotlar" ? "pptx" : "docx";
     
@@ -53,6 +64,7 @@ function fetchResults(searchTerm, category, page) {
             console.log(data); // Log the entire response for debugging
             displayResults(data, category);
             managePagination(data.length);
+           
         })
         .catch(error => console.error('Error fetching data:', error));
 }
@@ -117,6 +129,24 @@ function managePagination(itemCount) {
      }
 }
 
+
+// Handle URL parameters on page load to allow sharing functionality
+window.onload = function() { 
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    const q = urlParams.get('q');
+    const page = urlParams.get('page');
+
+    
+    if (category && q) { 
+        document.getElementById('categorySelect').value = category === "pptx" ? "taqdimotlar" : "referatlar"; 
+        document.getElementById('searchInput').value = q.trim(); 
+        currentPage = page ? parseInt(page) : currentPage;
+
+        fetchResults(q, category, currentPage); // Fetch results based on parameters
+    }
+};
+
 // Toggle dark mode
 const darkModeToggle = document.getElementById('darkModeToggle');
 
@@ -135,3 +165,5 @@ darkModeToggle.addEventListener('click', () => {
           sunIcon.title = "Switch to dark mode"; // Optional title attribute
       }
 });
+
+

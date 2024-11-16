@@ -1,72 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taqdimotlar | Referatlar</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Taqdimotlar | Referatlar - Tekin Qidiruv Tizimi</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.png" type="image/png">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Taqdimotlar | Referatlar - Tekin taqdimot va referatlarni topish uchun qidiruv tizimi">
-    <meta name="keywords" content="taqdimotlar, referatlar, qidirish, tekin, presentations, documents, search, free, slayd, taqdimot, slide, referat, sun'iy intellekt">
-    <meta name="author" content="Diyorbek Ismoilov , UniquePros">
-    
+    <meta name="description" content="Tekin taqdimot va referatlarni qidirish tizimi. Talabalar uchun bepul slaydlar, taqdimotlar, referatlar va hujjatlar topish uchun mo‘ljallangan qidiruv sayti.">
+    <meta name="keywords" content="taqdimotlar, referatlar, qidirish tizimi, tekin hujjatlar, bepul slaydlar, taqdimot qidirish, referat topish, student materiallari, Uzbek, o'quv hujjatlar">
+    <meta name="author" content="Diyorbek Ismoilov, UniquePros">
+
     <!-- Open Graph Meta Tags for social media sharing -->
-    <meta property="og:title" content="Taqdimotlar | Referatlar">
-    <meta property="og:description" content="Tekin taqdimot va referatlarni topish uchun qidiruv tizimi">
-    <meta property="og:image" content="images/avatar.jpg"> <!-- Replace with a link to an image -->
-    <meta property="og:url" content="https://tqdm.ismailov.uz"> <!-- Replace with your website URL -->
-    
+    <meta property="og:title" content="Taqdimotlar | Referatlar - Tekin Qidiruv Tizimi">
+    <meta property="og:description" content="Talabalar uchun tekin taqdimot va referatlarni qidirish tizimi. Bepul o‘quv materiallari va hujjatlarni toping.">
+    <meta property="og:image" content="https://tqdm.ismailov.uz/images/avatar.jpg">
+    <meta property="og:url" content="https://tqdm.ismailov.uz">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uz_UZ">
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Taqdimotlar | Referatlar">
-    <meta name="twitter:description" content="Tekin taqdimot va referatlarni topish uchun qidiruv tizimi">
-    <meta name="twitter:image" content="images/avatar.jpg"> <!-- Replace with a link to an image -->
+    <meta name="twitter:title" content="Taqdimotlar | Referatlar - Tekin Qidiruv Tizimi">
+    <meta name="twitter:description" content="Talabalar uchun tekin taqdimot va referatlarni topish tizimi. O‘quv materiallarini toping.">
+    <meta name="twitter:image" content="https://tqdm.ismailov.uz/images/avatar.jpg">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tqdm.ismailov.uz">
+
+    <!-- Alternate languages -->
+    <link rel="alternate" hreflang="uz" href="https://tqdm.ismailov.uz">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Taqdimotlar | Referatlar",
+      "url": "https://tqdm.ismailov.uz",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://tqdm.ismailov.uz/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "inLanguage": "uz",
+      "description": "Tekin taqdimot va referatlarni qidirish tizimi. Bepul o‘quv materiallari va hujjatlarni toping.",
+      "keywords": ["taqdimotlar", "referatlar", "bepul qidiruv", "talabalar", "Uzbekistan"]
+    }
+    </script>
+
+    <!-- Google Tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2CCV82TFD"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-M2CCV82TFD');
     </script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Moon Icon for Dark Mode Toggle -->
+    <!-- Dark Mode Toggle Button -->
     <div id="darkModeToggle" class="dark-mode-toggle">
         <i class="fas fa-moon"></i>
     </div>
 
     <div class="container">
         <h1>Taqdimotlar | Referatlar</h1>
-        <form id="searchForm">
+        <form id="searchForm" method="GET" action="/">
             <div class="form-group">
-                <select id="categorySelect" required>
-                    <option value="taqdimotlar" selected>Taqdimotlar</option> <!-- Set this option as selected -->
+                <select id="categorySelect" name="category" required>
+                    <option value="taqdimotlar" selected>Taqdimotlar</option>
                     <option value="referatlar">Referatlar</option>
                 </select>
-                <input type="text" id="searchInput" placeholder="Hujjat mavzusi..." required>
-                <button type="submit">Qidirish</button>
+                <input type="text" id="searchInput" name="q" placeholder="Hujjat mavzusi..." required aria-label="Hujjat qidirish">
+                <button type="submit" aria-label="Qidirish">Qidirish</button>
             </div>
         </form>
 
         <!-- Pagination Buttons -->
         <div class="pagination-buttons">
-            <button id="prevPageButton" class="hidden"><i class="fas fa-chevron-left"></i></button> <!-- Previous Page button -->
-            <button id="nextPageButton" class="hidden"><i class="fas fa-chevron-right"></i></button> <!-- Next Page button -->
+            <button id="prevPageButton" class="hidden" aria-label="Oldingi sahifa"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextPageButton" class="hidden" aria-label="Keyingi sahifa"><i class="fas fa-chevron-right"></i></button>
         </div>
 
-        <div id="result" class="result"></div> <!-- Results will be displayed here -->
+        <div id="result" class="result" aria-live="polite"></div> <!-- Results container for better accessibility -->
     </div>
 
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
