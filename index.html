@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taqdimotlar | Referatlar - Tekin Qidiruv Tizimi</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="uz">
+    <meta name="title" content="Taqdimotlar | Referatlar - Tekin Qidiruv Tizimi">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+    <meta name="theme-color" content="#007bff">
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Tekin taqdimot va referatlarni qidirish tizimi. Talabalar uchun bepul slaydlar, taqdimotlar, referatlar va hujjatlar topish uchun mo‘ljallangan qidiruv sayti.">
@@ -16,6 +20,7 @@
     <meta property="og:title" content="Taqdimotlar | Referatlar - Tekin Qidiruv Tizimi">
     <meta property="og:description" content="Talabalar uchun tekin taqdimot va referatlarni qidirish tizimi. Bepul o‘quv materiallari va hujjatlarni toping.">
     <meta property="og:image" content="https://tqdm.ismailov.uz/images/avatar.jpg">
+    <meta property="og:image:alt" content="tqdm.ismailov.uz logo">
     <meta property="og:url" content="https://tqdm.ismailov.uz">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="uz_UZ">
@@ -65,11 +70,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header>
     <!-- Dark Mode Toggle Button -->
     <div id="darkModeToggle" class="dark-mode-toggle">
         <i class="fas fa-moon"></i>
     </div>
+    <img src="images/avatar.jpg" alt="Taqdimotlar Referatlar" width="64" height="64">
 
+</header>
+<main>
     <div class="container">
         <h1>Taqdimotlar | Referatlar</h1>
         <form id="searchForm" method="GET" action="/">
@@ -91,6 +100,10 @@
 
         <div id="result" class="result" aria-live="polite"></div> <!-- Results container for better accessibility -->
     </div>
+</main>
+<footer>
+    <p>&copy; 2024 Taqdimotlar | Referatlar</p>
+</footer>
 
     <script src="script.js"></script>
 </body>

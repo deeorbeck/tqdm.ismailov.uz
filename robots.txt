@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tqdm.ismailov.uz/sitemap.xml
