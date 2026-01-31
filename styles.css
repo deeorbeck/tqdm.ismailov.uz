@@ -1,159 +1,462 @@
 /* General body styles */
 body {
-    font-family: 'Roboto', sans-serif; /* Use Roboto for better readability */
-    background-color: #f4f4f4; /* Light gray background */
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: #121212; /* Dark background */
+    background-color: #121212;
 }
 
-/* Container for the main content */
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+    background: rgba(99, 102, 241, 0.3);
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle i {
+    font-size: 20px;
+    color: #6366f1;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .dark-mode-toggle i {
+    color: #fff;
+}
+
+/* Container for main content */
 .container {
-    max-width: 700px; /* Set maximum width of the container */
-    margin: 50px auto; /* Center the container */
-    padding: 20px; /* Padding inside the container */
-    background-color: #fff; /* White background for the container */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark mode container styles */
 body.dark-mode .container {
-    background-color: #1e1e1e; /* Darker container background */
+    background-color: #1e1e1e;
 }
 
 /* Header styles */
-h1 {
-    text-align: center; /* Center align the header */
-    color: #333; /* Dark gray color for text */
+header {
+    background: rgba(99, 102, 241, 0.05);
+    padding: 15px 0;
+    margin-bottom: 30px;
 }
 
-/* Dark mode header styles */
-body.dark-mode h1 {
-    color: #ffffff; /* Light text color for header in dark mode */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo img {
+    width: 60px;
+    height: 60px;
+}
+
+.logo-text h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+
+.logo-text p {
+    font-size: 14px;
+    margin: 0;
+    color: #666;
+}
+
+body.dark-mode .logo-text h1,
+body.dark-mode .logo-text p {
+    color: #fff;
 }
 
 /* Form styles */
 form {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    gap: 10px;
 }
 
-/* Form group for input and buttons alignment */
-.form-group {
-    display: flex;
-    justify-content: space-between; /* Space between elements */
-    align-items: center; /* Align items vertically centered */
-}
-
-/* Styles for select and input fields */
 select, input[type="text"] {
-    width: calc(70% - 10px); /* Width of input and select elements with spacing adjustment */
-    padding: 10px; /* Padding inside input and select elements */
-    margin-right: 10px; /* Space between elements */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 16px; /* Font size for better readability */
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
 }
 
-/* Button styles */
 button {
-   padding: 10px 15px; /* Padding inside buttons (top/bottom, left/right) */
-   border: none; /* No border for buttons */
-   border-radius: 4px; /* Rounded corners for buttons */
-   background-color: #007bff; /* Blue background color for buttons */
-   color: white; /* White text color for buttons */
-   cursor: pointer; /* Pointer cursor on hover */
-   font-size: 16px; /* Font size for better readability */
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-   background-color: #0056b3; /* Darker blue on hover for buttons */
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
-/* Result section styles */
-.result {
-   margin-top: 20px; /* Space above results section */
+/* Hero Section */
+.hero-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin-bottom: 50px;
 }
 
-/* Styles for individual items returned from the API (cards)*/
-.item {
-   display: flex;
-   justify-content: space-between;   /* Aligns item content and download link horizontally */ 
-   align-items: center;               /* Center items vertically */ 
-   background-color: #f9f9f9;         /* Light background for items */ 
-   border: 1px solid #ddd;            /* Light gray border around items */ 
-   border-radius: 5px;                /* Rounded corners for items */ 
-   padding: 15px;                     /* Padding inside each item card*/ 
-   margin-bottom: 10px;               /* Space between item cards*/ 
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
 }
 
-/* Styles for item content within cards*/
-.item-content {
-   flex-grow: 1;                      /* Allow item content to take available space */ 
-   overflow-wrap: break-word;         /* Allow long words to break and wrap onto next line */ 
-   white-space: normal;               /* Allow normal wrapping of text */ 
+.hero-text h2 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
-/* Download link styles within items*/
-.download-button {
-   display: inline-flex;       /* Use flexbox for alignment within item cards */ 
-   align-items: center;        /* Center icon vertically in the link */ 
-   padding: 10px 15px;        /* Padding inside link to fit text properly */ 
-   background-color: #007bff; /* Blue background for download link */ 
-   color: white;               /* White text color for link */ 
-   border-radius: 4px;        /* Rounded corners for link */ 
-   text-decoration: none;      /* Remove underline from link */ 
-   transition: background-color 0.3s ease, transform 0.3s ease;/* Smooth transitions on hover*/ 
+.hero-text p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
 }
 
-.download-button:hover {
-   background-color: #0056b3;/* Darker blue on hover for download link*/ 
-   transform: translateY(-2px);/* Slight lift effect on hover*/ 
+.hero-cta a {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #fff;
+    color: #667eea;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.download-icon { 
-   margin-right: 5px;         /* Space between icon and text in download link*/ 
+.hero-cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Hidden class for elements that should not be displayed initially (like next page button) */ 
-.hidden { 
-   display: none;              /* Hides elements with this class from view */ 
-}
-
-/* Pagination Buttons Styling */
-.pagination-buttons {
+.hero-stats {
     display: flex;
-    justify-content: center;     /* Center align buttons horizontally */
-    margin-top: 20px;           /* Space above buttons */
+    gap: 20px;
 }
 
-.pagination-buttons button {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-  
-/* Moon/Sun Icon Styles*/
-.dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    font-size: 24px;
+.stat-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 150px;
 }
 
-.dark-mode-toggle:hover {
-     color:#007bff;
+.stat-icon {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
-body.dark-mode .dark-mode-toggle .fa-sun {
-    color: white; /* Change sun icon color to white in dark mode */
+.stat-text h3 {
+    font-size: 28px;
+    color: #fff;
+    margin: 0;
+}
+
+.stat-text p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    font-size: 16px;
+    color: #666;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 36px;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 60px 0;
+    background: #f4f4f4;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-avatar {
+    font-size: 40px;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.testimonial-content {
+    margin-bottom: 15px;
+}
+
+.testimonial-content p {
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.testimonial-author strong {
+    font-size: 16px;
+    color: #333;
+}
+
+.testimonial-author span {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #667eea;
+}
+
+.footer-copyright {
+    text-align: right;
+}
+
+.footer-copyright p {
+    font-size: 14px;
+    color: #aaa;
+    margin: 5px 0;
+}
+
+/* Mobile optimization */
+@media (max-width: 767.98px) {
+    .container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 24px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat-box {
+        min-width: 100px;
+        padding: 15px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+}
+
+/* Dark mode for new sections */
+body.dark-mode .features-section,
+body.dark-mode .testimonials-section {
+    background: #1a1a1a;
+}
+
+body.dark-mode .feature-card,
+body.dark-mode .testimonial-card {
+    background: #2a2a2a;
+    border-color: #333;
+}
+
+body.dark-mode .feature-card h3,
+body.dark-mode .testimonial-content p,
+body.dark-mode .section-title h2 {
+    color: #fff;
+}
+
+body.dark-mode .feature-card p,
+body.dark-mode .section-title p {
+    color: #999;
+}
+
+body.dark-mode .testimonial-author strong {
+    color: #fff;
+}
+
+body.dark-mode .testimonial-author span {
+    color: #999;
 }

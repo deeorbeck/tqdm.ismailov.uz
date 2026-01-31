@@ -7,36 +7,29 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta name="robots" content="index, follow">
     <meta name="language" content="uz">
-    <meta name="title" content="Taqdimotlar | Referatlar - Tekin Qidiruv Tizimi">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
     <meta name="theme-color" content="#007bff">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Tekin taqdimot va referatlarni qidirish tizimi. Talabalar uchun bepul slaydlar, taqdimotlar, referatlar va hujjatlar topish uchun mo‘ljallangan qidiruv sayti.">
-    <meta name="keywords" content="taqdimotlar, referatlar, qidirish tizimi, tekin hujjatlar, bepul slaydlar, taqdimot qidirish, referat topish, student materiallari, Uzbek, o'quv hujjatlar">
-    <meta name="author" content="Diyorbek Ismoilov, UniquePros">
+    <meta name="description" content="O'zbek talabalar uchun bepul taqdimot va referatlarni qidirish tizimi. 100,000+ hujjat, 50,000+ foydalanuvchi. 3 soniyada natija.">
+    <meta name="keywords" content="taqdimotlar, referatlar, qidirish tizimi, tekin hujjatlar, bepul slaydlar, student materiallari, Uzbek, talabalar">
 
-    <!-- Open Graph Meta Tags for social media sharing -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Taqdimotlar | Referatlar - Tekin Qidiruv Tizimi">
-    <meta property="og:description" content="Talabalar uchun tekin taqdimot va referatlarni qidirish tizimi. Bepul o‘quv materiallari va hujjatlarni toping.">
+    <meta property="og:description" content="O'zbek talabalar uchun bepul taqdimot va referatlarni qidirish tizimi. 100,000+ hujjat, 50,000+ foydalanuvchi.">
     <meta property="og:image" content="https://tqdm.ismailov.uz/images/avatar.jpg">
-    <meta property="og:image:alt" content="tqdm.ismailov.uz logo">
     <meta property="og:url" content="https://tqdm.ismailov.uz">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="uz_UZ">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Taqdimotlar | Referatlar - Tekin Qidiruv Tizimi">
-    <meta name="twitter:description" content="Talabalar uchun tekin taqdimot va referatlarni topish tizimi. O‘quv materiallarini toping.">
+    <meta name="twitter:title" content="Taqdimotlar | Referatlar">
+    <meta name="twitter:description" content="O'zbek talabalar uchun bepul taqdimot va referatlarni qidirish tizimi.">
     <meta name="twitter:image" content="https://tqdm.ismailov.uz/images/avatar.jpg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tqdm.ismailov.uz">
 
-    <!-- Alternate languages -->
-    <link rel="alternate" hreflang="uz" href="https://tqdm.ismailov.uz">
-    
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {
@@ -50,18 +43,18 @@
         "query-input": "required name=search_term_string"
       },
       "inLanguage": "uz",
-      "description": "Tekin taqdimot va referatlarni qidirish tizimi. Bepul o‘quv materiallari va hujjatlarni toping.",
+      "description": "O'zbek talabalar uchun bepul taqdimot va referatlarni qidirish tizimi. 100,000+ hujjat, 50,000+ foydalanuvchi.",
       "keywords": ["taqdimotlar", "referatlar", "bepul qidiruv", "talabalar", "Uzbekistan"]
     }
     </script>
 
-    <!-- Google Tag (gtag.js) -->
+    <!-- Google Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2CCV82TFD"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-M2CCV82TFD');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M2CCV82TFD');
     </script>
 
     <!-- Styles -->
@@ -70,40 +63,195 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-    <!-- Dark Mode Toggle Button -->
+    <!-- Dark Mode Toggle -->
     <div id="darkModeToggle" class="dark-mode-toggle">
         <i class="fas fa-moon"></i>
     </div>
-    <img src="images/avatar.jpg" alt="Taqdimotlar Referatlar" width="64" height="64">
 
-</header>
-<main>
-    <div class="container">
-        <h1>Taqdimotlar | Referatlar</h1>
-        <form id="searchForm" method="GET" action="/">
-            <div class="form-group">
-                <select id="categorySelect" name="category" required>
-                    <option value="taqdimotlar" selected>Taqdimotlar</option>
-                    <option value="referatlar">Referatlar</option>
-                </select>
-                <input type="text" id="searchInput" name="q" placeholder="Hujjat mavzusi..." required aria-label="Hujjat qidirish">
-                <button type="submit" aria-label="Qidirish">Qidirish</button>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="header-logo">
+                    <img src="images/avatar.jpg" alt="Taqdimotlar Referatlar" width="60" height="60">
+                    <div class="logo-text">
+                        <h1>Taqdimotlar | Referatlar</h1>
+                        <p>Tekin Qidiruv Tizimi</p>
+                    </div>
+                </div>
+
+                <!-- Search Form -->
+                <form id="searchForm" method="GET" action="/">
+                    <select id="categorySelect" name="category" required>
+                        <option value="taqdimotlar" selected>Taqdimotlar</option>
+                        <option value="referatlar">Referatlar</option>
+                    </select>
+                    <input type="text" id="searchInput" name="q" placeholder="Hujjat mavzusi..." required>
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
-        </form>
-
-        <!-- Pagination Buttons -->
-        <div class="pagination-buttons">
-            <button id="prevPageButton" class="hidden" aria-label="Oldingi sahifa"><i class="fas fa-chevron-left"></i></button>
-            <button id="nextPageButton" class="hidden" aria-label="Keyingi sahifa"><i class="fas fa-chevron-right"></i></button>
         </div>
+    </header>
 
-        <div id="result" class="result" aria-live="polite"></div> <!-- Results container for better accessibility -->
-    </div>
-</main>
-<footer>
-    <p>&copy; 2024 Taqdimotlar | Referatlar</p>
-</footer>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>O'zbek Talabalar uchun Bepul Hujjatlar</h2>
+                    <p>100,000+ taqdimot va referat, 50,000+ foydalanuvchi, 3 soniyada natija.</p>
+                    <div class="hero-cta">
+                        <a href="#searchForm" class="btn btn-primary">Bepul Qidirish</a>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="stat-text">
+                            <h3>100,000+</h3>
+                            <p>Hujjat</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-text">
+                            <h3>50,000+</h3>
+                            <p>Foydalanuvchi</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="stat-text">
+                            <h3>3 soniya</h3>
+                            <p>Natija vaqti</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nima uchun qidirishimiz?</h2>
+                <p>3 ta oddiy qadamda hujjat toping</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-search"></i></div>
+                    <h3>Tekin qidirish</h3>
+                    <p>3 soniyada natija. Tezkor va aniq.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-download"></i></div>
+                    <h3>Bepul yuklab olish</h3>
+                    <p>Hamma hujjatlar bepul. To'lov talab qilinmaydi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-file-word"></i></div>
+                    <h3>Professional format</h3>
+                    <p>PPTX va DOCX formatlar. O'quv standartlariga mos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobil qulaylik</h3>
+                    <p>Har qurilma uchun optimallashtirilgan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Xavfsiz</h3>
+                    <p>Shaxsiy ma'lumotlaringiz himoyalangan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>24/7 kirish</h3>
+                    <p>Har vaqtda hujjat topishingiz mumkin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Foydalanuvchilar fikri</h2>
+                <p>Talabalarimiz nima deyishadi</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <div class="testimonial-content">
+                        <p>"Bu tizim orqali diplomim uchun 3 ta taqdimot topdim. Juda tezkor va sifatli!"</p>
+                        <div class="testimonial-author">
+                            <strong>Azizbek</strong>
+                            <span>Talaba, Toshkent</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <div class="testimonial-content">
+                        <p>"Referat olish juda oson. Talaba sifati ko'tarildi!"</p>
+                        <div class="testimonial-author">
+                            <strong>Gulnoza</strong>
+                            <span>Talaba, Samarqand</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <div class="testimonial-content">
+                        <p>"Hujjatlar professional formatda. Dizayni ham zo'r!"</p>
+                        <div class="testimonial-author">
+                            <strong>Jamshid</strong>
+                            <span>Talaba, Andijon</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <div class="testimonial-content">
+                        <p>"24/7 ishlash. Hujjat topish oson!"</p>
+                        <div class="testimonial-author">
+                            <strong>Bobur</strong>
+                            <span>Talaba, Buxoro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Haqida</h3>
+                    <p>Bepul taqdimot va referatlarni qidirish tizimi.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://t.me/taqdimot_robot" target="_blank">
+                        <i class="fab fa-telegram"></i> Telegram Bot
+                    </a>
+                    <a href="https://t.me/diyorbekismailov" target="_blank">
+                        <i class="fab fa-telegram"></i> Bog'lanish
+                    </a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Taqdimotlar | Referatlar</p>
+                    <p>Diyorbek Ismoilov yaratdi</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
