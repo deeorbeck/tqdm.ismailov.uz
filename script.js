@@ -136,7 +136,7 @@ function displayResultsBeforeHero(results, query, type) {
             <div class="result-text">${item.text}</div>
             <div class="result-meta">
                 <span>ID: ${item.id}</span>
-                <a href="https://t.me/taqdimot_robot?start=${item.id}" target="_blank" class="btn-download">
+                <a href="https://t.me/taqdimot_robot?start=id_${item.id}" target="_blank" class="btn-download">
                     <i class="fas fa-download"></i> Yuklab olish
                 </a>
             </div>
