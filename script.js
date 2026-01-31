@@ -33,6 +33,15 @@ async function searchDocuments(text, type = null, page = 1, pageSize = 10) {
     }
 }
 
+// Type labels for display
+const typeLabels = {
+    'pptx': 'Taqdimot',
+    'docx': 'Referat',
+    'test': 'Test',
+    'crossword': 'Krossvord',
+    'kurs_ishi': 'Kurs ishi'
+};
+
 async function getItemCount() {
     try {
         const response = await fetch(`${API_BASE_URL}/items/count`);
@@ -66,18 +75,14 @@ searchForm.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
 
     try {
-        // Map category to type
-        const typeMap = {
-            'taqdimotlar': 'taqdimotlar',
-            'referatlar': 'referatlar'
-        };
-        const type = typeMap[category] || null;
+        // Use category directly (pptx, docx, test, crossword, kurs_ishi)
+        const type = category || null;
 
         // Search documents
         const results = await searchDocuments(query, type);
 
-        // Display results
-        displayResults(results, query, type);
+        // Display results before hero section
+        displayResultsBeforeHero(results, query, type);
 
     } catch (error) {
         console.error('Search error:', error);
@@ -89,8 +94,8 @@ searchForm.addEventListener('submit', async (e) => {
     }
 });
 
-// Display Results
-function displayResults(results, query, type) {
+// Display Results (before hero section)
+function displayResultsBeforeHero(results, query, type) {
     // Remove existing results container if exists
     const existingResults = document.getElementById('searchResults');
     if (existingResults) {
@@ -123,10 +128,11 @@ function displayResults(results, query, type) {
 
     // Add result cards
     results.forEach(item => {
+        const displayType = typeLabels[item.type] || item.type || 'Hujjat';
         const card = document.createElement('div');
         card.className = 'result-card';
         card.innerHTML = `
-            <div class="result-type">${item.type || type || 'Hujjat'}</div>
+            <div class="result-type type-${item.type}">${displayType}</div>
             <div class="result-text">${item.text}</div>
             <div class="result-meta">
                 <span>ID: ${item.id}</span>
@@ -140,15 +146,15 @@ function displayResults(results, query, type) {
 
     resultsContainer.appendChild(resultsGrid);
 
-    // Insert after hero section
+    // Insert before hero section
     const heroSection = document.querySelector('.hero-section');
-    heroSection.parentNode.insertBefore(resultsContainer, heroSection.nextSibling);
+    heroSection.parentNode.insertBefore(resultsContainer, heroSection);
 
     // Scroll to results
     resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// Show No Results
+// Show No Results (before hero section)
 function showNoResults(query) {
     const resultsContainer = document.createElement('div');
     resultsContainer.id = 'searchResults';
@@ -173,8 +179,9 @@ function showNoResults(query) {
         </div>
     `;
 
+    // Insert before hero section
     const heroSection = document.querySelector('.hero-section');
-    heroSection.parentNode.insertBefore(resultsContainer, heroSection.nextSibling);
+    heroSection.parentNode.insertBefore(resultsContainer, heroSection);
     resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 

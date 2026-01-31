@@ -687,6 +687,27 @@ body.dark-mode .result-card {
     margin-bottom: 15px;
 }
 
+/* Different type colors */
+.result-type.type-pptx {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.result-type.type-docx {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.result-type.type-test {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.result-type.type-crossword {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.result-type.type-kurs_ishi {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
 .result-text {
     font-size: 16px;
     color: #222;
