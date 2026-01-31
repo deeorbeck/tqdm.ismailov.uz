@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
+    color: #222;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -107,11 +107,10 @@ header {
 .logo-text p {
     font-size: 15px;
     margin: 5px 0 0 0;
-    color: #555;
+    color: #444;
 }
 
-body.dark-mode .logo-text h1,
-body.dark-mode .logo-text p {
+body.dark-mode .logo-text h1 {
     color: #fff;
 }
 
@@ -226,7 +225,7 @@ button:active {
 
 .hero-text p {
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.95);
+    color: #ffffff;
     margin-bottom: 30px;
 }
 
@@ -276,14 +275,14 @@ button:active {
 
 .stat-text h3 {
     font-size: 32px;
-    color: #333;
+    color: #222;
     margin: 0;
     font-weight: 700;
 }
 
 .stat-text p {
     font-size: 14px;
-    color: #555;
+    color: #444;
     margin: 5px 0 0 0;
 }
 
@@ -300,14 +299,14 @@ button:active {
 
 .section-title h2 {
     font-size: 36px;
-    color: #333;
+    color: #222;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .section-title p {
     font-size: 18px;
-    color: #666;
+    color: #555;
 }
 
 .features-grid {
@@ -339,14 +338,14 @@ button:active {
 
 .feature-card h3 {
     font-size: 20px;
-    color: #333;
+    color: #222;
     margin-bottom: 12px;
     font-weight: 600;
 }
 
 .feature-card p {
     font-size: 15px;
-    color: #555;
+    color: #444;
     margin: 0;
     line-height: 1.6;
 }
@@ -375,7 +374,7 @@ footer {
 
 .footer-section p {
     font-size: 15px;
-    color: #ccc;
+    color: #ddd;
     line-height: 1.6;
 }
 
@@ -410,7 +409,7 @@ footer {
 
 .footer-copyright p {
     font-size: 14px;
-    color: #aaa;
+    color: #bbb;
     margin: 8px 0;
 }
 
@@ -586,7 +585,7 @@ body.dark-mode .stat-text h3 {
 }
 
 body.dark-mode .stat-text p {
-    color: #ccc;
+    color: #ddd;
 }
 
 /* Animation on scroll */
@@ -632,7 +631,7 @@ body.dark-mode .search-results {
 
 .results-header h3 {
     font-size: 28px;
-    color: #333;
+    color: #222;
     margin: 0 0 10px 0;
     font-weight: 700;
 }
@@ -643,7 +642,7 @@ body.dark-mode .results-header h3 {
 
 .results-header p {
     font-size: 16px;
-    color: #666;
+    color: #555;
     margin: 0;
 }
 
@@ -690,7 +689,7 @@ body.dark-mode .result-card {
 
 .result-text {
     font-size: 16px;
-    color: #333;
+    color: #222;
     line-height: 1.6;
     margin-bottom: 20px;
     min-height: 80px;
@@ -714,11 +713,11 @@ body.dark-mode .result-meta {
 
 .result-meta span {
     font-size: 13px;
-    color: #888;
+    color: #666;
 }
 
 body.dark-mode .result-meta span {
-    color: #666;
+    color: #777;
 }
 
 .btn-download {
@@ -755,7 +754,7 @@ body.dark-mode .result-meta span {
 
 .no-results h3 {
     font-size: 28px;
-    color: #333;
+    color: #222;
     margin: 0 0 15px 0;
     font-weight: 700;
 }
@@ -766,7 +765,7 @@ body.dark-mode .no-results h3 {
 
 .no-results > p:first-of-type {
     font-size: 16px;
-    color: #666;
+    color: #555;
     margin-bottom: 30px;
 }
 
@@ -791,7 +790,7 @@ body.dark-mode .no-results-tips {
 
 .no-results-tips p {
     font-size: 14px;
-    color: #555;
+    color: #444;
     margin: 0 0 10px 0;
     font-weight: 600;
 }
@@ -808,7 +807,7 @@ body.dark-mode .no-results-tips p {
 
 .no-results-tips li {
     font-size: 14px;
-    color: #666;
+    color: #555;
     padding: 5px 0;
     padding-left: 25px;
     position: relative;
@@ -823,7 +822,7 @@ body.dark-mode .no-results-tips p {
 }
 
 body.dark-mode .no-results-tips li {
-    color: #999;
+    color: #888;
 }
 
 .btn-cta {
