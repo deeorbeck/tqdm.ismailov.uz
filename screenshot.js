@@ -11,8 +11,8 @@ const puppeteer = require('puppeteer');
   // Set viewport size
   await page.setViewport({ width: 1920, height: 1080 });
 
-  // Load the page
-  await page.goto('file:///var/www/tqdm.ismailov.uz/index.html', {
+  // Load page from local server
+  await page.goto('http://localhost:8080', {
     waitUntil: 'networkidle0'
   });
 

@@ -6,14 +6,22 @@ const searchForm = document.getElementById('searchForm');
 const searchInput = document.getElementById('searchInput');
 const categorySelect = document.getElementById('categorySelect');
 const darkModeToggle = document.getElementById('darkModeToggle');
+const searchResults = document.getElementById('searchResults');
+const quickLinks = document.querySelectorAll('.quick-link');
+
+// Type labels for display
+const typeLabels = {
+    'pptx': 'Taqdimot',
+    'docx': 'Referat',
+    'test': 'Test',
+    'crossword': 'Krossvord',
+    'kurs_ishi': 'Kurs ishi'
+};
 
 // API Functions
-async function searchDocuments(text, type = null, page = 1, pageSize = 10) {
+async function searchDocuments(text, type = null) {
     const params = new URLSearchParams({
-        text: text,
-        page: page,
-        page_size: pageSize,
-        randomize: 'false'
+        text: text
     });
 
     if (type) {
@@ -33,29 +41,6 @@ async function searchDocuments(text, type = null, page = 1, pageSize = 10) {
     }
 }
 
-// Type labels for display
-const typeLabels = {
-    'pptx': 'Taqdimot',
-    'docx': 'Referat',
-    'test': 'Test',
-    'crossword': 'Krossvord',
-    'kurs_ishi': 'Kurs ishi'
-};
-
-async function getItemCount() {
-    try {
-        const response = await fetch(`${API_BASE_URL}/items/count`);
-        if (!response.ok) {
-            throw new Error('Sonlarni olishda xatolik');
-        }
-        const count = await response.json();
-        return count;
-    } catch (error) {
-        console.error('API Error:', error);
-        return 100000; // Fallback to default
-    }
-}
-
 // Search Form Handler
 searchForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -69,24 +54,22 @@ searchForm.addEventListener('submit', async (e) => {
     }
 
     // Show loading state
-    const submitBtn = searchForm.querySelector('button');
+    const submitBtn = searchForm.querySelector('.search-btn');
     const originalIcon = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
     submitBtn.disabled = true;
 
     try {
-        // Use category directly (pptx, docx, test, crossword, kurs_ishi)
-        const type = category || null;
-
         // Search documents
+        const type = category || null;
         const results = await searchDocuments(query, type);
 
-        // Display results before hero section
-        displayResultsBeforeHero(results, query, type);
+        // Display results
+        displaySearchResults(results, query, type);
 
     } catch (error) {
         console.error('Search error:', error);
-        alert('Qidiruvda xatolik yuz berdi. Iltimos, qayta urinib ko\'ring.');
+        displayNoResults(query);
     } finally {
         // Reset button
         submitBtn.innerHTML = originalIcon;
@@ -94,96 +77,95 @@ searchForm.addEventListener('submit', async (e) => {
     }
 });
 
-// Display Results (before hero section)
-function displayResultsBeforeHero(results, query, type) {
-    // Remove existing results container if exists
-    const existingResults = document.getElementById('searchResults');
-    if (existingResults) {
-        existingResults.remove();
-    }
+// Display Search Results
+function displaySearchResults(results, query, type) {
+    // Clear previous results
+    searchResults.innerHTML = '';
 
     // Check if results exist
     if (!results || results.length === 0) {
-        showNoResults(query);
+        displayNoResults(query);
         return;
     }
 
     // Create results container
     const resultsContainer = document.createElement('div');
-    resultsContainer.id = 'searchResults';
-    resultsContainer.className = 'search-results';
+    resultsContainer.className = 'results-list';
 
     // Create results header
     const resultsHeader = document.createElement('div');
     resultsHeader.className = 'results-header';
     resultsHeader.innerHTML = `
-        <h3>Qidiruv natijalari: "${query}"</h3>
-        <p>${results.length} ta hujjat topildi</p>
+        <h3>${results.length} ta natija</h3>
+        <p>"${query}" bo'yicha</p>
     `;
-    resultsContainer.appendChild(resultsHeader);
+    searchResults.appendChild(resultsHeader);
 
-    // Create results grid
-    const resultsGrid = document.createElement('div');
-    resultsGrid.className = 'results-grid';
-
-    // Add result cards
-    results.forEach(item => {
+    // Add result items
+    results.forEach((item, index) => {
         const displayType = typeLabels[item.type] || item.type || 'Hujjat';
-        const card = document.createElement('div');
-        card.className = 'result-card';
-        card.innerHTML = `
-            <div class="result-type type-${item.type}">${displayType}</div>
-            <div class="result-text">${item.text}</div>
-            <div class="result-meta">
-                <span>ID: ${item.id}</span>
-                <a href="https://t.me/taqdimot_robot?start=id_${item.id}" target="_blank" class="btn-download">
-                    <i class="fas fa-download"></i> Yuklab olish
-                </a>
+        const resultItem = document.createElement('div');
+        resultItem.className = 'result-item';
+        resultItem.style.animationDelay = `${index * 0.08}s`;
+
+        resultItem.innerHTML = `
+            <div class="result-type-icon type-${item.type}">${displayType.charAt(0)}</div>
+            <div class="result-content">
+                <div class="result-title">${item.text}</div>
+                <div class="result-meta">ID: ${item.id}</div>
             </div>
+            <a href="https://t.me/taqdimot_robot?start=id_${item.id}" target="_blank" class="result-download" aria-label="Yuklab olish">
+                Yuklab olish
+            </a>
         `;
-        resultsGrid.appendChild(card);
+        resultsContainer.appendChild(resultItem);
     });
 
-    resultsContainer.appendChild(resultsGrid);
-
-    // Insert before hero section
-    const heroSection = document.querySelector('.hero-section');
-    heroSection.parentNode.insertBefore(resultsContainer, heroSection);
+    searchResults.appendChild(resultsContainer);
 
     // Scroll to results
     resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// Show No Results (before hero section)
-function showNoResults(query) {
-    const resultsContainer = document.createElement('div');
-    resultsContainer.id = 'searchResults';
-    resultsContainer.className = 'search-results';
-
-    resultsContainer.innerHTML = `
+// Display No Results
+function displayNoResults(query) {
+    searchResults.innerHTML = `
         <div class="no-results">
-            <div class="no-results-icon"><i class="fas fa-search-minus"></i></div>
+            <div class="no-results-icon"><i class="fas fa-search"></i></div>
             <h3>Hech narsa topilmadi</h3>
-            <p>"${query}" bo'yicha hech qanday hujjat topilmadi.</p>
+            <p>"${query}" bo'yicha hech qanday hujjat topilmadi</p>
             <div class="no-results-tips">
-                <p>Boshqa so'zlar bilan urinib ko'ring:</p>
                 <ul>
+                    <li>Boshqa so'zlar bilan urinib ko'ring</li>
                     <li>Qisqaroq so'zlar ishlating</li>
                     <li>Boshqacha yozishni sinab ko'ring</li>
-                    <li>Boshqa toifani tanlang</li>
                 </ul>
             </div>
-            <a href="https://t.me/taqdimot_robot" target="_blank" class="btn-cta">
-                <i class="fab fa-telegram"></i> Telegram bot orqali qidirish
-            </a>
+            <div class="no-results-cta">
+                <a href="https://t.me/taqdimot_robot" target="_blank" class="btn-cta">
+                    <i class="fab fa-telegram"></i> Telegram bot
+                </a>
+            </div>
         </div>
     `;
-
-    // Insert before hero section
-    const heroSection = document.querySelector('.hero-section');
-    heroSection.parentNode.insertBefore(resultsContainer, heroSection);
-    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+// Quick Links Handler
+quickLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const type = link.getAttribute('data-type');
+
+        // Update category select
+        categorySelect.value = type;
+
+        // Scroll to search
+        searchForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Focus search input
+        searchInput.focus();
+    });
+});
 
 // Dark Mode Toggle
 darkModeToggle.addEventListener('click', () => {
@@ -196,11 +178,13 @@ darkModeToggle.addEventListener('click', () => {
             iconElement.classList.replace('fa-moon', 'fa-sun');
         }
         darkModeToggle.title = 'Yorugin mod';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1a1a1a');
     } else {
         if (iconElement) {
             iconElement.classList.replace('fa-sun', 'fa-moon');
         }
         darkModeToggle.title = 'Qorongi mod';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
     }
 
     saveDarkMode(document.body.classList.contains('dark-mode'));
@@ -221,22 +205,9 @@ function loadDarkMode() {
             iconElement.classList.replace('fa-moon', 'fa-sun');
         }
         darkModeToggle.title = 'Yorugin mod';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1a1a1a');
     }
 }
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -254,26 +225,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // Trigger search
         searchForm.dispatchEvent(new Event('submit'));
-    }
-});
-
-// Handle browser back/forward
-window.addEventListener('popstate', (event) => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchQuery = urlParams.get('q');
-    const category = urlParams.get('category');
-
-    if (searchQuery) {
-        searchInput.value = searchQuery;
-        if (category) {
-            categorySelect.value = category;
-        }
-        searchForm.dispatchEvent(new Event('submit'));
-    } else {
-        // Clear results if no search query
-        const existingResults = document.getElementById('searchResults');
-        if (existingResults) {
-            existingResults.remove();
-        }
     }
 });
