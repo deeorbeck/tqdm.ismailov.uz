@@ -1,31 +1,23 @@
-const puppeteer = require('puppeteer');
+const { chromium } = require('playwright');
 
-(async () => {
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
+async function takeScreenshots() {
+    const browser = await chromium.launch();
+    const page = await browser.newPage();
 
-  const page = await browser.newPage();
+    // Light mode
+    await page.goto('http://localhost:8080', { waitUntil: 'networkidle' });
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    await page.screenshot({ path: 'screenshot.png', fullPage: true });
 
-  // Set viewport size
-  await page.setViewport({ width: 1920, height: 1080 });
+    // Dark mode
+    await page.goto('http://localhost:8080', { waitUntil: 'networkidle' });
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    await page.click('#darkModeToggle');
+    await page.waitForTimeout(500);
+    await page.screenshot({ path: 'screenshot-dark.png', fullPage: true });
 
-  // Load page from local server
-  await page.goto('http://localhost:8080', {
-    waitUntil: 'networkidle0'
-  });
+    await browser.close();
+    console.log('Screenshots saved!');
+}
 
-  // Take screenshot
-  await page.screenshot({ path: 'screenshot.png', fullPage: true });
-
-  // Take dark mode screenshot
-  await page.evaluate(() => {
-    document.body.classList.add('dark-mode');
-  });
-  await page.screenshot({ path: 'screenshot-dark.png', fullPage: true });
-
-  await browser.close();
-
-  console.log('Screenshots saved: screenshot.png, screenshot-dark.png');
-})();
+takeScreenshots().catch(console.error);
