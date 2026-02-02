@@ -1,6 +1,6 @@
 /* ========================================
    LIQUID GLASSMORPHISM SEARCH ENGINE
-   100X PREMIUM UPGRADE
+   100X PREMIUM UPGRADE - FINAL
    ======================================== */
 
 /* ===== CSS VARIABLES ===== */
@@ -368,11 +368,11 @@ header {
 
 /* Category Select */
 select {
-    padding: 0 var(--spacing-lg) 0 0;
+    padding: 0 var(--spacing-md) 0 0;
     border: none;
     border-right: 1px solid var(--border-color);
     border-radius: 0;
-    font-size: 15px;
+    font-size: 14px;
     background: transparent;
     color: var(--text-primary);
     font-weight: var(--font-weight-semibold);
@@ -380,14 +380,17 @@ select {
     transition: all var(--transition-base);
     height: 100%;
     width: auto;
-    min-width: 140px;
+    min-width: 180px;
+    max-width: 200px;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667eea' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 8px center;
-    padding-right: 28px;
+    padding-right: 24px;
+    white-space: nowrap;
+    overflow: visible;
 }
 
 select:hover {
@@ -396,6 +399,11 @@ select:hover {
 
 select:focus {
     outline: none;
+}
+
+select option {
+    padding: var(--spacing-sm);
+    font-size: 14px;
 }
 
 body.dark-mode select {
@@ -1068,9 +1076,10 @@ body.dark-mode .footer-copyright p {
     }
 
     select {
-        font-size: 14px;
-        padding-right: 24px;
-        min-width: 120px;
+        font-size: 13px;
+        padding-right: 20px;
+        min-width: 160px;
+        max-width: 180px;
     }
 
     .search-btn {
@@ -1205,6 +1214,7 @@ body.dark-mode .footer-copyright p {
         text-align: center;
         box-shadow: var(--shadow-sm);
         min-width: auto;
+        max-width: none;
     }
 
     select:hover,
