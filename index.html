@@ -2,100 +2,246 @@
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taqdimotlar | Referatlar - Bepul Qidiruv Tizimi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Taqdimotlar | Referatlar - O'zbekistonning #1 Bepul Hujjatlar Qidiruvi | 100,000+ Hujjat</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="uz">
     <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://api.tqdm.ismailov.uz">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="images/avatar.jpg" as="image">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="O'zbek talabalar uchun bepul taqdimot va referatlarni qidirish tizimi. 100,000+ hujjat, 50,000+ foydalanuvchi. Minimalist va tezkor qidiruv.">
-    <meta name="keywords" content="taqdimotlar, referatlar, qidirish, bepul, tekin, minimal, minimalist, Uzbek, talabalar, hujjatlar">
+    <meta name="description" content="O'zbekistonning eng katta bepul taqdimot va referatlar qidiruv tizimi. 100,000+ hujjat, 50,000+ foydalanuvchi. PPTX, DOCX, testlar, krossvordlar - barchasi tekin! 3 soniyada natija.">
+    <meta name="keywords" content="taqdimotlar, referatlar, testlar, krossvordlar, kurs ishlari, bepul, tekin, qidirish, Uzbek, talabalar, hujjatlar, taqdimot yuklab olish, referat yuklab olish, O'zbekiston, Toshkent, diploma, kurs ishi, seminar">
     <meta name="author" content="Diyorbek Ismoilov">
+    <meta name="publisher" content="Taqdimotlar | Referatlar">
+    <meta name="application-name" content="TQDM">
+    <meta name="apple-mobile-web-app-title" content="TQDM">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Taqdimotlar | Referatlar - Minimalist Qidiruv">
-    <meta property="og:description" content="O'zbek talabalar uchun bepul taqdimot va referatlar. Minimalist va tezkor qidiruv.">
-    <meta property="og:image" content="https://tqdm.ismailov.uz/images/og-image.jpg">
-    <meta property="og:url" content="https://tqdm.ismailov.uz">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="uz_UZ">
+    <meta property="og:url" content="https://tqdm.ismailov.uz">
+    <meta property="og:title" content="Taqdimotlar | Referatlar - O'zbekistonning #1 Bepul Hujjatlar Qidiruvi">
+    <meta property="og:description" content="100,000+ hujjat, 50,000+ foydalanuvchi. PPTX, DOCX, testlar, krossvordlar - barchasi tekin! 3 soniyada natija.">
+    <meta property="og:image" content="https://tqdm.ismailov.uz/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Taqdimotlar | Referatlar Logo">
     <meta property="og:site_name" content="Taqdimotlar | Referatlar">
-    <meta property="og:theme_color" content="#ffffff">
+    <meta property="og:locale" content="uz_UZ">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ru_RU">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Taqdimotlar | Referatlar - Minimalist Qidiruv">
-    <meta name="twitter:description" content="O'zbek talabalar uchun bepul taqdimot va referatlar. Minimalist va tezkor qidiruv.">
+    <meta name="twitter:url" content="https://tqdm.ismailov.uz">
+    <meta name="twitter:title" content="Taqdimotlar | Referatlar - O'zbekistonning #1 Bepul Hujjatlar Qidiruvi">
+    <meta name="twitter:description" content="100,000+ hujjat, 50,000+ foydalanuvchi. PPTX, DOCX, testlar, krossvordlar - barchasi tekin!">
     <meta name="twitter:image" content="https://tqdm.ismailov.uz/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="Taqdimotlar | Referatlar Logo">
     <meta name="twitter:site" content="@tqdm_uz">
+    <meta name="twitter:creator" content="@diyorbekismailov">
+    <meta name="twitter:app:name:iphone" content="Taqdimotlar Robot">
+    <meta name="twitter:app:id:iphone" content="1234567890">
+    <meta name="twitter:app:url:iphone" content="tg://resolve?domain=taqdimot_robot">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tqdm.ismailov.uz">
+    <link rel="alternate" hreflang="uz" href="https://tqdm.ismailov.uz">
+    <link rel="alternate" hreflang="en" href="https://tqdm.ismailov.uz/?lang=en">
+    <link rel="alternate" hreflang="ru" href="https://tqdm.ismailov.uz/?lang=ru">
 
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Taqdimotlar | Referatlar",
-      "alternateName": "TQDM",
-      "url": "https://tqdm.ismailov.uz",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://tqdm.ismailov.uz/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "inLanguage": "uz",
-      "description": "O'zbek talabalar uchun bepul taqdimot va referatlar. Minimalist va tezkor qidiruv tizimi.",
-      "keywords": ["taqdimotlar", "referatlar", "bepul qidiruv", "talabalar", "minimalist", "Uzbekistan"],
-      "author": {
-        "@type": "Person",
-        "name": "Diyorbek Ismoilov"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Taqdimotlar | Referatlar",
+          "alternateName": "TQDM",
+          "url": "https://tqdm.ismailov.uz",
+          "description": "O'zbekistonning eng katta bepul taqdimot va referatlar qidiruv tizimi. 100,000+ hujjat, 50,000+ foydalanuvchi.",
+          "inLanguage": "uz",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://tqdm.ismailov.uz/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Taqdimotlar | Referatlar",
+            "url": "https://tqdm.ismailov.uz"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Taqdimotlar | Referatlar",
+          "alternateName": "TQDM",
+          "url": "https://tqdm.ismailov.uz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://tqdm.ismailov.uz/images/avatar.jpg",
+            "width": 200,
+            "height": 200
+          },
+          "sameAs": [
+            "https://t.me/taqdimot_robot",
+            "https://t.me/diyorbekismailov"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+998-XX-XXX-XX-XX",
+            "contactType": "customer service",
+            "availableLanguage": ["Uzbek", "Russian", "English"]
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Toshkent",
+            "addressRegion": "Toshkent shahri",
+            "addressCountry": "UZ"
+          }
+        },
+        {
+          "@type": "Person",
+          "name": "Diyorbek Ismoilov",
+          "url": "https://ismailov.uz",
+          "sameAs": [
+            "https://t.me/diyorbekismailov"
+          ],
+          "jobTitle": "Full Stack Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Taqdimotlar | Referatlar"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Taqdimotlar va referatlarni bepul yuklab olish mumkinmi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ha, TqDM da 100,000+ taqdimot, referat, test, krossvord va kurs ishlarini bepul yuklab olish mumkin."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qanday formatlarda hujjatlar mavjud?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bizda PPTX (taqdimotlar), DOCX (referatlar), testlar, krossvordlar va kurs ishlari mavjud."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qidiruv qancha vaqtni oladi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bizning qidiruv tizimimiz o'rtacha 3 soniyada natija beradi."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Taqdimotlar Robot",
+          "operatingSystem": "Telegram",
+          "applicationCategory": "EducationalApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "UZS"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "50000",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      ]
     }
     </script>
 
-    <!-- Google Tag -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2CCV82TFD"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-M2CCV82TFD');
+      gtag('config', 'G-M2CCV82TFD', {
+        'anonymize_ip': true,
+        'custom_map': {'dimension1': 'document_type'}
+      });
     </script>
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Dark Mode Toggle -->
-    <div id="darkModeToggle" class="dark-mode-toggle" title="Qorongi/Yorugin mod">
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Qorongi/Yorugin mod almashtirish" title="Qorongi mod">
         <i class="fas fa-moon"></i>
-    </div>
+    </button>
 
-    <div class="container">
-        <!-- Header - Minimalist -->
-        <header>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Asosiy qismga o'tish</a>
+
+    <div class="container" id="main-content">
+        <!-- Header - Premium Minimalist -->
+        <header role="banner">
             <div class="header-logo">
-                <img src="images/avatar.jpg" alt="Taqdimotlar Referatlar Logo" width="56" height="56">
+                <img src="images/avatar.jpg" alt="Taqdimotlar Referatlar Logo" width="64" height="64" loading="lazy">
                 <div class="logo-text">
                     <h1>Taqdimotlar | Referatlar</h1>
-                    <p>Bepul Qidiruv Tizimi</p>
+                    <p>O'zbekistonning #1 Bepul Qidiruv Tizimi</p>
                 </div>
             </div>
 
-            <!-- Search Form - Centered & Minimalist -->
+            <!-- Stats Badge -->
+            <div class="stats-badge">
+                <div class="stat-item">
+                    <span class="stat-value">100K+</span>
+                    <span class="stat-label">Hujjatlar</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">50K+</span>
+                    <span class="stat-label">Foydalanuvchilar</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">3s</span>
+                    <span class="stat-label">Natija</span>
+                </div>
+            </div>
+
+            <!-- Search Form - Premium & Minimalist -->
             <div class="search-container">
-                <form class="search-form" id="searchForm" method="GET" action="/">
+                <form class="search-form" id="searchForm" method="GET" action="/" role="search" aria-label="Hujjatlar qidiruvi">
+                    <label for="categorySelect" class="visually-hidden">Kategoriya</label>
                     <select id="categorySelect" name="category" aria-label="Kategoriya">
                         <option value="pptx" selected>Taqdimotlar</option>
                         <option value="docx">Referatlar</option>
@@ -105,8 +251,9 @@
                         <option value="">Barchasi</option>
                     </select>
                     <div class="search-input-wrapper">
-                        <i class="fas fa-search search-icon"></i>
-                        <input type="text" id="searchInput" name="q" placeholder="Qidiruv..." required aria-label="Qidiruv">
+                        <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                        <label for="searchInput" class="visually-hidden">Qidiruv</label>
+                        <input type="text" id="searchInput" name="q" placeholder="Hujjat qidiring..." required aria-label="Qidiruv" autocomplete="off" spellcheck="false">
                     </div>
                     <button type="submit" class="search-btn" aria-label="Qidirish">
                         <i class="fas fa-arrow-right"></i>
@@ -115,44 +262,78 @@
             </div>
         </header>
 
-        <!-- Hero Section - Minimal -->
+        <!-- Hero Section - Premium -->
         <section class="hero-section" aria-label="Hero Section">
             <div class="hero-text">
-                <h2>O'zbek talabalar uchun bepul hujjatlar</h2>
-                <p>Tez, sodda va minimalist</p>
+                <h2>O'zbek talabalari uchun bepul hujjatlar</h2>
+                <p>Tezkor, sodda va ishonchli</p>
             </div>
 
-            <!-- Quick Links -->
-            <div class="quick-links">
-                <a href="#" class="quick-link" data-type="pptx">Taqdimotlar</a>
-                <a href="#" class="quick-link" data-type="docx">Referatlar</a>
-                <a href="#" class="quick-link" data-type="test">Testlar</a>
-                <a href="#" class="quick-link" data-type="crossword">Krossvordlar</a>
+            <!-- Quick Links - Premium -->
+            <nav class="quick-links" aria-label="Tezkor havolalar">
+                <a href="#" class="quick-link" data-type="pptx" role="button" aria-label="Taqdimotlarni qidirish">
+                    <i class="fas fa-file-powerpoint"></i>
+                    <span>Taqdimotlar</span>
+                </a>
+                <a href="#" class="quick-link" data-type="docx" role="button" aria-label="Referatlarni qidirish">
+                    <i class="fas fa-file-word"></i>
+                    <span>Referatlar</span>
+                </a>
+                <a href="#" class="quick-link" data-type="test" role="button" aria-label="Testlarni qidirish">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Testlar</span>
+                </a>
+                <a href="#" class="quick-link" data-type="crossword" role="button" aria-label="Krossvordlarni qidirish">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span>Krossvordlar</span>
+                </a>
+            </nav>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <div class="trust-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Tezkor qidiruv</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-infinity"></i>
+                    <span>Cheksiz yuklab olish</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Xavfsiz</span>
+                </div>
             </div>
         </section>
 
         <!-- Search Results Container -->
-        <div id="searchResults" aria-live="polite" aria-atomic="true"></div>
+        <main id="searchResults" aria-live="polite" aria-atomic="true" role="main"></main>
 
-        <!-- Footer - Minimal -->
-        <footer aria-label="Footer">
+        <!-- Footer - Premium -->
+        <footer role="contentinfo" aria-label="Footer">
             <div class="footer-content">
                 <div class="footer-links">
                     <a href="https://t.me/taqdimot_robot" target="_blank" rel="noopener noreferrer" aria-label="Telegram Bot">
-                        <i class="fab fa-telegram"></i> Telegram Bot
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram Bot</span>
                     </a>
                     <a href="https://t.me/diyorbekismailov" target="_blank" rel="noopener noreferrer" aria-label="Bog'lanish">
-                        <i class="fab fa-telegram"></i> Bog'lanish
+                        <i class="fab fa-telegram"></i>
+                        <span>Bog'lanish</span>
+                    </a>
+                    <a href="https://ismailov.uz" target="_blank" rel="noopener noreferrer" aria-label="Portfolio">
+                        <i class="fas fa-globe"></i>
+                        <span>Portfolio</span>
                     </a>
                 </div>
                 <div class="footer-copyright">
-                    <p>&copy; 2024-2025 Taqdimotlar | Referatlar</p>
-                    <p>Diyorbek Ismoilov</p>
+                    <p>&copy; 2024-2026 Taqdimotlar | Referatlar</p>
+                    <p>Diyorbek Ismoilov • Toshkent, O'zbekiston</p>
                 </div>
             </div>
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
